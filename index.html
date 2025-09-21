@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <title>Frontend Mentor | Weather app</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!--<div class="container">-->
+    <header>
+      <div>
+        <img src="./assets/images/logo.svg" alt="logo" class="logo" />
+      </div>
+      <ul>
+        <li>
+          <div class="Units-container" role="button" aria-expanded="false">
+            <img src="./assets/images/icon-units.svg" alt="units" />
+            <p>Units</p>
+            <img src="./assets/images/icon-dropdown.svg" alt="dropdown" />
+
+            <div>
+              <form action="" class="dropdown" id="dropdown">
+                <div class="form-units-container">
+                  <label for="" class="unit-title">Switch to Imperial</label>
+                  <div class="temperature-unit-container has-main-container">
+                    <label for="" class="temperature-title has-title"
+                      >Temperature</label
+                    >
+                    <div class="options-container">
+                      <div class="Celsius-container unit-container">
+                        <input
+                          type="radio"
+                          id="Celsius"
+                          name="Temperature"
+                          value="Celsius"
+                        />
+                        <label
+                          for="Celsius"
+                          class="title-Celsius-lable has-title-label"
+                          >Celsius ('C)
+                        </label>
+                        <span class="custom-radio">
+                          <img
+                            src="./assets/images/icon-checkmark.svg"
+                            alt=""
+                            class="checkmark"
+                          />
+                        </span>
+                      </div>
+                      <div class="Fahrenheit-container unit-container">
+                        <input
+                          type="radio"
+                          id="Fahrenheit"
+                          name="Temperature"
+                          value="Fahrenheit"
+                        />
+                        <label for="Fahrenheit" class="has-title-label"
+                          >Fahrenheit ('F)</label
+                        >
+                        <span class="custom-radio">
+                          <img
+                            src="./assets/images/icon-checkmark.svg"
+                            alt=""
+                            class="checkmark"
+                          />
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="wind-speed-container has-main-container unit-container"
+                  >
+                    <label for="" class="has-title">Wind Speed</label>
+                    <div class="options-container">
+                      <div class="kili-meter">
+                        <input type="radio" id="km" name="wind" value="km" />
+                        <label for="km" class="has-title-label">Km/h</label>
+                        <span class="custom-radio">
+                          <img
+                            src="./assets/images/icon-checkmark.svg"
+                            alt=""
+                            class="checkmark"
+                          />
+                        </span>
+                      </div>
+                      <div class="mile-per-hour">
+                        <input type="radio" id="mph" name="wind" value="mph" />
+                        <label for="mph" class="has-title-label">mph</label>
+                        <span class="custom-radio">
+                          <img
+                            src="./assets/images/icon-checkmark.svg"
+                            alt=""
+                            class="checkmark"
+                          />
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="precipitation-container unit-container">
+                    <label for="" class="has-title">Precipitation</label>
+                    <div class="Milimeters-container">
+                      <input
+                        type="radio"
+                        id="Milimeters"
+                        name="Precipitation"
+                        value="Milimeters"
+                      />
+                      <label for="Milimeters" class="has-title-label"
+                        >Milimeters (mm)</label
+                      >
+                      <span class="custom-radio">
+                        <img
+                          src="./assets/images/icon-checkmark.svg"
+                          alt=""
+                          class="checkmark"
+                        />
+                      </span>
+                    </div>
+                    <div class="Inches-container">
+                      <input
+                        type="radio"
+                        id="Inches"
+                        name="Precipitation"
+                        value="Inches"
+                      />
+                      <label for="Inches" class="has-title-label">
+                        Inches (in)</label
+                      >
+                      <span class="custom-radio">
+                        <img
+                          src="./assets/images/icon-checkmark.svg"
+                          alt=""
+                          class="checkmark"
+                        />
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </header>
+    <div class="main-title">
+      <h2 class="title">How's the sky looking today?</h2>
+    </div>
+    <main class="main-container">
+        <!--Search bar-->
+        <div class="search-bar">
+          <form action="" onsubmit="return false" class="Search-Container">
+            <div class="search-input">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <input
+                type="search"
+                placeholder="Search for a place.."
+                aria-autocomplete=""
+                aria-label="search"
+              />
+              <div class="search-dropdown" id="dropdown">
+                <div class="recent-searches">
+                <p class="recent-searches-item searches-item-1">New York</p>
+                <p class="recent-searches-item">London</p>
+                <p class="recent-searches-item">Tokyo</p>
+                <p class="recent-searches-item">Berlin</p>
+                </div>
+              </div>
+            </div>
+            <input type="submit" placeholder="search" class="primary-button" />
+          </form>
+        </div>
+
+        <!--Main cards-->
+        <div class="content-container">
+          <!--left cards-->
+          <div class="left-content">
+          <!--Weather info container-->
+          <div class="Weather-Info-Container">
+            <!--Main card-->
+            <div class="main-card">
+              <!--left algned-->
+              <div class="location-date">
+                <div id="location">Berlin, Germany</div>
+                <div id="date">Tuesday, Aug 5, 2025</div>
+              </div>
+              <!--Right algned-->
+              <div class="temperature-container">
+                <img src="./assets/images/icon-sunny.webp" alt="icon" />
+                <h1 class="temperature">20'</h1>
+              </div>
+            </div>
+            <!---Details cards-->
+            <div class="details-card">
+              <div class="Feels-like is-details-card">
+                <p id="Feels-like-label label" class="label">Feels Like</p>
+                <p id="Feels-like-value" class="value">18'</p>
+              </div>
+              <div class="Humidity is-details-card">
+                <p id="humidity-label" class="label">Humidty</p>
+                <p id="humidity-value" class="value">46%</p>
+              </div>
+              <div class="Wind is-details-card">
+                <p id="wind-label" class="label">Wind</p>
+                <p id="wind-value" class="value">14 km/h</p>
+              </div>
+              <div class="Precipitation is-details-card">
+                <p id="precipitation-label " class="label">Precipitation</p>
+                <p id="precipitation-value" class="value">0 mm</p>
+              </div>
+            </div>
+          </div>
+              <!--Daily forecast-->
+          <div class="Daily-forecast-container">
+            <p class="title-forecast">Daily forecast</p>
+            <div class="days">
+              <div class="sunday is-day">
+                <p class="day-label">Sun</p>
+                <img
+                  src="./assets/images/icon-fog.webp"
+                  alt="snow"
+                  class="weaher-icon"
+                />
+                <div class="temperature-numbers">
+                  <p class="min-temperature">25'</p>
+                  <p class="max-temperature">16'</p>
+                </div>
+              </div>
+              <div class="Monday is-day">
+                <p class="day-label">Mon</p>
+                <img
+                  src="./assets/images/icon-rain.webp"
+                  alt="Rain"
+                  class="weaher-icon"
+                />
+                <div class="temperature-numbers">
+                  <p class="min-temperature">24'</p>
+                  <p class="max-temperature">15'</p>
+                </div>
+              </div>
+              <div class="Tuesday is-day">
+                <p class="day-label">Tue</p>
+                <img
+                  src="./assets/images/icon-sunny.webp"
+                  alt="Sunny"
+                  class="weaher-icon"
+                />
+                <div class="temperature-numbers">
+                  <p class="min-temperature">20'</p>
+                  <p class="max-temperature">14'</p>
+                </div>
+              </div>
+              <div class="Wednesday is-day">
+                <p class="day-label">Wed</p>
+                <img
+                  src="./assets/images/icon-storm.webp"
+                  alt="snow"
+                  class="weaher-icon"
+                />
+                <div class="temperature-numbers">
+                  <p class="min-temperature">25'</p>
+                  <p class="max-temperature">16'</p>
+                </div>
+              </div>
+              <div class="Thursday is-day">
+                <p class="day-label">Thur</p>
+                <img
+                  src="./assets/images/icon-sunny.webp"
+                  alt="Suuny"
+                  class="weaher-icon"
+                />
+                <div class="temperature-numbers">
+                  <p class="min-temperature">24'</p>
+                  <p class="max-temperature">14'</p>
+                </div>
+              </div>
+              <div class="Friday is-day">
+                <p class="day-label">Fri</p>
+                <img
+                  src="./assets/images/icon-rain.webp"
+                  alt="Rain"
+                  class="weaher-icon"
+                />
+                <div class="temperature-numbers">
+                  <p class="min-temperature">21'</p>
+                  <p class="max-temperature">15'</p>
+                </div>
+              </div>
+              <div class="Saturday is-day">
+                <p class="day-label">Sat</p>
+                <img
+                  src="./assets/images/icon-snow.webp"
+                  alt="snow"
+                  class="weaher-icon"
+                />
+                <div class="temperature-numbers">
+                  <p class="min-temperature">25'</p>
+                  <p class="max-temperature">16'</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        
+        <!--Right Cards-->
+        <div class="hourly-forecast-container">
+          <div class="hourly-forecast-header">
+            <p class="title-forecast">Hourly forecast</p>
+            <div class="hourly-forecast-dropdown">
+              <p>Sunday</p>
+              <img src="./assets/images/icon-dropdown.svg" alt="dropdown" />
+              <div class="days-dropdown">
+                <p class="daily-focus-title">Monday</p>
+                <p class="daily-focus-title">Tuesday</p>
+                <p class="daily-focus-title">Wednesday</p>
+                <p class="daily-focus-title">Thursday</p>
+                <p class="daily-focus-title">Friday</p>
+                <p class="daily-focus-title">Saturday</p>
+                <p class="daily-focus-title">Sunday</p>
+              </div>
+            </div>
+          </div>
+          <!--card 2-->
+          <div class="hourly-weather-card">
+            <div class="weather-icon-time">
+              <img
+                src="./assets/images/icon-partly-cloudy.webp"
+                alt="ion"
+                clas="weather-icon"
+              />
+              <p class="hourly-time">2 PM</p>
+            </div>
+            <p>20'</p>
+          </div>
+          <!--card 2-->
+          <div class="hourly-weather-card">
+            <div class="weather-icon-time">
+              <img
+                src="./assets/images/icon-sunny.webp"
+                alt="ion"
+                clas="weather-icon"
+              />
+              <p class="hourly-time">3 PM</p>
+            </div>
+            <p>20'</p>
+          </div>
+          <!--card 3-->
+          <div class="hourly-weather-card">
+            <div class="weather-icon-time">
+              <img
+                src="./assets/images/icon-overcast.webp"
+                alt="ion"
+                clas="weather-icon"
+              />
+              <p class="hourly-time">4 PM</p>
+            </div>
+            <p>37'</p>
+          </div>
+          <!--card 4-->
+          <div class="hourly-weather-card">
+            <div class="weather-icon-time">
+              <img
+                src="./assets/images/icon-rain.webp"
+                alt="ion"
+                clas="weather-icon"
+              />
+              <p class="hourly-time">5 PM</p>
+            </div>
+            <p>5'</p>
+          </div>
+          <!--card 5-->
+          <div class="hourly-weather-card">
+            <div class="weather-icon-time">
+              <img
+                src="./assets/images/icon-snow.webp"
+                alt="ion"
+                clas="weather-icon"
+              />
+              <p class="hourly-time">6 PM</p>
+            </div>
+            <p>19'</p>
+          </div>
+          <!--card 6-->
+          <div class="hourly-weather-card">
+            <div class="weather-icon-time">
+              <img
+                src="./assets/images/icon-storm.webp"
+                alt="ion"
+                clas="weather-icon"
+              />
+              <p class="hourly-time">7 PM</p>
+            </div>
+            <p>17'</p>
+          </div>
+          <!--card 7-->
+          <div class="hourly-weather-card">
+            <div class="weather-icon-time">
+              <img
+                src="./assets/images/icon-sunny.webp"
+                alt="ion"
+                clas="weather-icon"
+              />
+              <p class="hourly-time">8 PM</p>
+            </div>
+            <p>17'</p>
+          </div>
+          <!--card 8-->
+          <div class="hourly-weather-card">
+            <div class="weather-icon-time">
+              <img
+                src="./assets/images/icon-sunny.webp"
+                alt="ion"
+                clas="weather-icon"
+              />
+              <p class="hourly-time">9 PM</p>
+            </div>
+            <p>14'</p>
+          </div>
+        </div>
+        </div>
+    </main>
+    <!--<footer class="attribution-mobile">
+        <div>
+          Challenge by
+          <a href="https://www.frontendmentor.io?ref=challenge"
+            >Frontend Mentor</a
+          >. Coded by <a href="#">Powell Mweemba</a>.
+        </div>
+</footer>
+      -->
+
+    <!--</div>-->
+    <script src="./script.js"></script>
+  </body>
+</html>

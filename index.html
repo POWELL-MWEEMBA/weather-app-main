@@ -35,11 +35,9 @@
             <div>
               <form action="" class="dropdown" id="dropdown">
                 <div class="form-units-container">
-                  <label for="" class="unit-title">Switch to Imperial</label>
+                  <div class="unit-title">Switch to Imperial</div>
                   <div class="temperature-unit-container has-main-container">
-                    <label for="" class="temperature-title has-title"
-                      >Temperature</label
-                    >
+                    <div class="temperature-title has-title">Temperature</div>
                     <div class="options-container">
                       <div class="Celsius-container unit-container">
                         <input
@@ -84,10 +82,10 @@
                   <div
                     class="wind-speed-container has-main-container unit-container"
                   >
-                    <label for="" class="has-title">Wind Speed</label>
+                    <div class="has-title">Wind Speed</div>
                     <div class="options-container">
                       <div class="kili-meter">
-                        <input type="radio" id="km" name="wind" value="km" />
+                        <input type="radio" id="km" name="Wind" value="km" />
                         <label for="km" class="has-title-label">Km/h</label>
                         <span class="custom-radio">
                           <img
@@ -98,7 +96,7 @@
                         </span>
                       </div>
                       <div class="mile-per-hour">
-                        <input type="radio" id="mph" name="wind" value="mph" />
+                        <input type="radio" id="mph" name="Wind" value="mph" />
                         <label for="mph" class="has-title-label">mph</label>
                         <span class="custom-radio">
                           <img
@@ -111,7 +109,7 @@
                     </div>
                   </div>
                   <div class="precipitation-container unit-container">
-                    <label for="" class="has-title">Precipitation</label>
+                    <div class="has-title">Precipitation</div>
                     <div class="Milimeters-container">
                       <input
                         type="radio"
@@ -160,34 +158,35 @@
       <h2 class="title">How's the sky looking today?</h2>
     </div>
     <main class="main-container">
-        <!--Search bar-->
-        <div class="search-bar">
-          <form action="" onsubmit="return false" class="Search-Container">
-            <div class="search-input">
-              <i class="fa-solid fa-magnifying-glass"></i>
-              <input
-                type="search"
-                placeholder="Search for a place.."
-                aria-autocomplete=""
-                aria-label="search"
-              />
-              <div class="search-dropdown" id="dropdown">
-                <div class="recent-searches">
+      <!--Search bar-->
+      <div class="search-bar">
+        <form class="Search-Container">
+          <div class="search-input">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input
+              type="search"
+              id="search"
+              placeholder="Search for a place.."
+              aria-autocomplete=""
+              aria-label="search"
+            />
+            <div class="search-dropdown" id="dropdown">
+              <div class="recent-searches">
                 <p class="recent-searches-item searches-item-1">New York</p>
                 <p class="recent-searches-item">London</p>
                 <p class="recent-searches-item">Tokyo</p>
                 <p class="recent-searches-item">Berlin</p>
-                </div>
               </div>
             </div>
-            <input type="submit" placeholder="search" class="primary-button" />
-          </form>
-        </div>
+          </div>
+          <button type="submit" class="primary-button">Search</button>
+        </form>
+      </div>
 
-        <!--Main cards-->
-        <div class="content-container">
-          <!--left cards-->
-          <div class="left-content">
+      <!--Main cards-->
+      <div class="content-container">
+        <!--left cards-->
+        <div class="left-content">
           <!--Weather info container-->
           <div class="Weather-Info-Container">
             <!--Main card-->
@@ -223,7 +222,7 @@
               </div>
             </div>
           </div>
-              <!--Daily forecast-->
+          <!--Daily forecast-->
           <div class="Daily-forecast-container">
             <p class="title-forecast">Daily forecast</p>
             <div class="days">
@@ -314,23 +313,22 @@
             </div>
           </div>
         </div>
-        
-        
+
         <!--Right Cards-->
         <div class="hourly-forecast-container">
           <div class="hourly-forecast-header">
             <p class="title-forecast">Hourly forecast</p>
             <div class="hourly-forecast-dropdown">
-              <p>Sunday</p>
+              <p class="hourly-day">Sunday</p>
               <img src="./assets/images/icon-dropdown.svg" alt="dropdown" />
               <div class="days-dropdown">
-                <p class="daily-focus-title">Monday</p>
-                <p class="daily-focus-title">Tuesday</p>
-                <p class="daily-focus-title">Wednesday</p>
-                <p class="daily-focus-title">Thursday</p>
-                <p class="daily-focus-title">Friday</p>
-                <p class="daily-focus-title">Saturday</p>
-                <p class="daily-focus-title">Sunday</p>
+                <p class="daily-focus-title hourly-Monday">Monday</p>
+                <p class="daily-focus-title hourly-Tuesday">Tuesday</p>
+                <p class="daily-focus-title hourly-Wednesday">Wednesday</p>
+                <p class="daily-focus-title hourly-Thursday">Thursday</p>
+                <p class="daily-focus-title hourly-Friday">Friday</p>
+                <p class="daily-focus-title hourly-Saturday">Saturday</p>
+                <p class="daily-focus-title hourly-Sunday">Sunday</p>
               </div>
             </div>
           </div>
@@ -344,7 +342,7 @@
               />
               <p class="hourly-time">2 PM</p>
             </div>
-            <p>20'</p>
+            <p class="hourly-temperature">20'</p>
           </div>
           <!--card 2-->
           <div class="hourly-weather-card">
@@ -356,7 +354,7 @@
               />
               <p class="hourly-time">3 PM</p>
             </div>
-            <p>20'</p>
+            <p class="hourly-temperature">20'</p>
           </div>
           <!--card 3-->
           <div class="hourly-weather-card">
@@ -368,7 +366,7 @@
               />
               <p class="hourly-time">4 PM</p>
             </div>
-            <p>37'</p>
+            <p class="hourly-temperature">37'</p>
           </div>
           <!--card 4-->
           <div class="hourly-weather-card">
@@ -380,7 +378,7 @@
               />
               <p class="hourly-time">5 PM</p>
             </div>
-            <p>5'</p>
+            <p class="hourly-temperature">5'</p>
           </div>
           <!--card 5-->
           <div class="hourly-weather-card">
@@ -392,7 +390,7 @@
               />
               <p class="hourly-time">6 PM</p>
             </div>
-            <p>19'</p>
+            <p class="hourly-temperature">19'</p>
           </div>
           <!--card 6-->
           <div class="hourly-weather-card">
@@ -404,7 +402,7 @@
               />
               <p class="hourly-time">7 PM</p>
             </div>
-            <p>17'</p>
+            <p class="hourly-temperature">17'</p>
           </div>
           <!--card 7-->
           <div class="hourly-weather-card">
@@ -416,7 +414,7 @@
               />
               <p class="hourly-time">8 PM</p>
             </div>
-            <p>17'</p>
+            <p class="hourly-temperature">17'</p>
           </div>
           <!--card 8-->
           <div class="hourly-weather-card">
@@ -428,12 +426,12 @@
               />
               <p class="hourly-time">9 PM</p>
             </div>
-            <p>14'</p>
+            <p class="hourly-temperature">14'</p>
           </div>
         </div>
-        </div>
+      </div>
     </main>
-    <!--<footer class="attribution-mobile">
+    <footer class="attribution-mobile">
         <div>
           Challenge by
           <a href="https://www.frontendmentor.io?ref=challenge"
@@ -441,7 +439,7 @@
           >. Coded by <a href="#">Powell Mweemba</a>.
         </div>
 </footer>
-      -->
+      
 
     <!--</div>-->
     <script src="./script.js"></script>
